@@ -17,7 +17,9 @@ Partial Class _Default
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        log.Error("Program has error.")
+        Dim data As New oData("Provider=SQLNCLI11;Data Source=localhost;Integrated Security=SSPI;")
+        data.Execute("Select * from tppr1d.pk010p ")
+        Dim dt = data.DataTable
     End Sub
 
 End Class
